@@ -1,1 +1,1 @@
-https://getpolsec.com/ad/ccc2db2ede10f9855d8f3ae18857cb84ab0ec3b43f20f5eba5dc58383a061da2
+loadstring(game:HttpGet("https://api.getpolsec.com/scripts/files/49741d2b735ac4fd1aacc79414f0ccc0861445e8987a263ea5c1e9aa38f82034.lua",true))()
