@@ -1,1 +1,2 @@
-https://api.getpolsec.com/scripts/hosted/241cf2f403221d5fa0d184bed16683d80844d048b94af44ed9a14627cc8d03b6.lua
+script_key = "KEY" -- Paste your key here or if the script is free put trial
+loadstring(game:HttpGet("https://api.getpolsec.com/scripts/hosted/241cf2f403221d5fa0d184bed16683d80844d048b94af44ed9a14627cc8d03b6.lua"))()
