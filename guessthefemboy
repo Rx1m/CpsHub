@@ -1,11 +1,11 @@
--- credits to rbx.gg/weed lol dont skid
+-- credits to discord.gg/cpshub lol dont skid bad boy
 local plr = game.Players.LocalPlayer
 local m = plr:GetMouse()
 local rs = game:GetService("RunService")
 local uis = game:GetService("UserInputService")
 local rep = game:GetService("ReplicatedStorage")
 
--- hopefully this works
+-- hopefully this works (FUCK SOLARA AND XENO)
 local ev = rep:FindFirstChild("events")
 if not ev then return end
 local guessRemote = ev:FindFirstChild("Guess")
@@ -15,7 +15,7 @@ if not guessRemote or not slapRemote then
     return 
 end
 
--- gui
+-- Dumbass gui
 local gui = Instance.new("ScreenGui")
 gui.Name = "weee"
 gui.ResetOnSpawn = false
@@ -30,7 +30,6 @@ frame.BorderSizePixel = 1
 frame.BorderColor3 = Color3.new(1,1,1)
 frame.Parent = gui
 
--- drag bar
 local bar = Instance.new("TextLabel")
 bar.Size = UDim2.new(1,0,0,22)
 bar.Position = UDim2.new(0,0,0,0)
@@ -46,7 +45,7 @@ local dragging = false
 local dragStart, frameStart
 
 bar.InputBegan:Connect(function(inp)
-    if inp.UserInputType == Enum.UserInputType.MouseButton1 then
+    if inp.UserInputType == Enum.UserInputType.MouseButton1 or inp.UserInputType == Enum.UserInputType.Touch then
         dragging = true
         dragStart = inp.Position
         frameStart = frame.Position
@@ -54,19 +53,19 @@ bar.InputBegan:Connect(function(inp)
 end)
 
 bar.InputEnded:Connect(function(inp)
-    if inp.UserInputType == Enum.UserInputType.MouseButton1 then
+    if inp.UserInputType == Enum.UserInputType.MouseButton1 or inp.UserInputType == Enum.UserInputType.Touch then
         dragging = false
     end
 end)
 
 uis.InputChanged:Connect(function(inp)
-    if dragging and inp.UserInputType == Enum.UserInputType.MouseMovement then
+    if dragging and (inp.UserInputType == Enum.UserInputType.MouseMovement or inp.UserInputType == Enum.UserInputType.Touch) then
         local delta = inp.Position - dragStart
         frame.Position = UDim2.new(frameStart.X.Scale, frameStart.X.Offset + delta.X, frameStart.Y.Scale, frameStart.Y.Offset + delta.Y)
     end
 end)
 
--- buttons n shit
+-- buttons n shit (im smoking weed doing this)
 local toggleBtn = Instance.new("TextButton")
 toggleBtn.Size = UDim2.new(0.75,0,0,28)
 toggleBtn.Position = UDim2.new(0.125,0,0.18,0)
@@ -131,7 +130,7 @@ local slapPower = 0.5
 local sliding = false
 local autoLoop = nil
 
--- messy ass function lmao
+-- messy ass function lmao (idk if it works :3)
 function findClosest()
     local char = plr.Character
     if not char then return end
@@ -155,7 +154,7 @@ function findClosest()
     return closest
 end
 
--- auto guess thread
+-- auto guess thread (gay, idk how to make it so deal with this)
 function startAuto()
     if autoLoop then autoLoop:Disconnect() end
     autoLoop = rs.RenderStepped:Connect(function()
@@ -171,7 +170,7 @@ function startAuto()
                 statusTxt.Text = "nobody near"
                 statusTxt.TextColor3 = Color3.new(1,0.5,0.5)
             end
-            wait(0.8) -- delay so it doesnt spam too fast
+            wait(0.8) -- delay so it doesnt spam too fast and rape device
         end
     end)
 end
@@ -204,20 +203,20 @@ function updateSlider(input)
 end
 
 sliderKnob.InputBegan:Connect(function(inp)
-    if inp.UserInputType == Enum.UserInputType.MouseButton1 then
+    if inp.UserInputType == Enum.UserInputType.MouseButton1 or inp.UserInputType == Enum.UserInputType.Touch then
         sliding = true
         updateSlider(inp)
     end
 end)
 
 uis.InputChanged:Connect(function(inp)
-    if sliding and inp.UserInputType == Enum.UserInputType.MouseMovement then
+    if sliding and (inp.UserInputType == Enum.UserInputType.MouseMovement or inp.UserInputType == Enum.UserInputType.Touch) then
         updateSlider(inp)
     end
 end)
 
 uis.InputEnded:Connect(function(inp)
-    if inp.UserInputType == Enum.UserInputType.MouseButton1 then
+    if inp.UserInputType == Enum.UserInputType.MouseButton1 or inp.UserInputType == Enum.UserInputType.Touch then
         sliding = false
     end
 end)
@@ -238,7 +237,7 @@ slapBtn.MouseButton1Click:Connect(function()
     end
 end)
 
--- cleanup
+-- cleaner
 game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function()
     wait(0.5)
     statusTxt.Text = "respawned"
@@ -251,4 +250,4 @@ game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function()
     end
 end)
 
-print("loaded")
+print("Im Such A Gay Boy :3")
