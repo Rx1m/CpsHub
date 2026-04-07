@@ -1,3 +1,1 @@
-script_key = "trial"
-
-loadstring(game:HttpGet("https://api.getpolsec.com/scripts/hosted/92181c0aa408101baef4eaab2cc30dd087d725a914cad9c75df20b5647f4a046.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Rx1m/CpsHub/refs/heads/main/bite%20by%20nights"))()
